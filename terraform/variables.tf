@@ -1,6 +1,7 @@
 variable "region" {
   description = "AWS region"
   type        = string
+  default     = "us-west-1"
 }
 
 variable "vpc_cidr" {
@@ -12,6 +13,7 @@ variable "vpc_cidr" {
 variable "azs" {
   description = "Availability Zones for the subnets"
   type        = list(string)
+  default     = ["us-west-1a", "us-west-1b"]
 }
 
 variable "public_subnet_1_cidr" {
@@ -29,6 +31,7 @@ variable "public_subnet_2_cidr" {
 variable "ami_id" {
   description = "AMI ID to use for instances"
   type        = string
+  default     = "ami-0175bdd48fdb0973b"
 }
 
 variable "bastion_instance_type" {
@@ -40,6 +43,7 @@ variable "bastion_instance_type" {
 variable "bastion_key_name" {
   description = "Key pair name for the bastion host"
   type        = string
+  default     = "ami-key"
 }
 
 variable "node_count" {
@@ -57,4 +61,5 @@ variable "instance_type" {
 variable "key_name" {
   description = "Key pair name for k3s nodes"
   type        = string
+  default     = "ami-key"
 }
